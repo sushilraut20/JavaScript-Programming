@@ -4,12 +4,6 @@ Compare Mark and John's BMI using creating objects. Also create a function to ca
 
 */
 
-
-var calculateBMI=function(mass, height){
-  var bmi=mass/(height * height);
-  return bmi;
-}
-
 var markDetails={
     firstName:"Mark",
     lastName:"Smith",
