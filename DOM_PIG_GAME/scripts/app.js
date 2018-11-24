@@ -15,7 +15,7 @@ init();
 document.querySelector(".btn-roll").addEventListener("click",function(){
 
   if(gamePlaying){
-    //1. Random Number
+    //1. Generate Random Number
     var dice= Math.floor(Math.random() * 6 ) + 1;
 
     //2. Display the result
@@ -40,13 +40,14 @@ document.querySelector(".btn-roll").addEventListener("click",function(){
 
 document.querySelector(".btn-hold").addEventListener("click",function(){
 if (gamePlaying) {
+  //Set Global score, same as that of current score
   globalScore[currentPlayer]+=roundScore;
   document.querySelector("#score-"+currentPlayer).textContent=globalScore[currentPlayer];
 
   if(globalScore[currentPlayer]>=100){
     document.querySelector("#name-"+currentPlayer).textContent="Winner!!!";
     document.querySelector(".dice").style.display="none";
-    document.querySelector(".player-"+currentPlayer+"-panel").classList.add("winner");
+    document.querySelector(".player-"+currentPlayer+"-panel").classList.add("winner"); // Changing the CSS by adding a class
     document.querySelector(".player-"+currentPlayer+"-panel").classList.remove("active");
 
     gamePlaying=false;
@@ -68,7 +69,7 @@ function nextPlayer(){
   currentPlayer === 0 ? currentPlayer = 1 : currentPlayer = 0;
   roundScore=0;
 
-  document.querySelector(".player-0-panel").classList.toggle("active");
+  document.querySelector(".player-0-panel").classList.toggle("active");// toggle will add class if not present and remove if present
   document.querySelector(".player-1-panel").classList.toggle("active");
 
 };
