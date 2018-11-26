@@ -18,12 +18,12 @@ document.querySelector(".btn-roll").addEventListener("click",function(){
     //1. Generate Random Number
     var dice= Math.floor(Math.random() * 6 ) + 1;
 
-    //2. Display the result
+    //2. Display the dice picture
     var diceDOM=document.querySelector(".dice");
     diceDOM.style.display='block';
     diceDOM.src="pictures/dice-" + dice + ".png";
 
-    //3. Update the round score if rolled number is NOT 1
+    //3. Update the round score if rolled number is NOT 1 else pass control to next player
     if(dice !== 1){
       roundScore+=dice;
       document.querySelector("#current-"+currentPlayer).textContent=roundScore;
@@ -40,7 +40,7 @@ document.querySelector(".btn-roll").addEventListener("click",function(){
 
 document.querySelector(".btn-hold").addEventListener("click",function(){
 if (gamePlaying) {
-  //Set Global score, same as that of current score
+  //Add global score by current score
   globalScore[currentPlayer]+=roundScore;
   document.querySelector("#score-"+currentPlayer).textContent=globalScore[currentPlayer];
 
@@ -63,9 +63,13 @@ if (gamePlaying) {
 
 function nextPlayer(){
 
+  //Make current score of current player 0
   document.querySelector("#current-"+currentPlayer).textContent=0;
+
+  //Remove dice picture
   document.querySelector('.dice').style.display="none";
 
+  //Change Current player
   currentPlayer === 0 ? currentPlayer = 1 : currentPlayer = 0;
   roundScore=0;
 
