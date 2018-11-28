@@ -1,4 +1,8 @@
+/*
+This is the one way to implement inheritance in javascript. The other way is using object.create
+*/
 
+//Here the 1st letter of the variable is capital, which indicates its Function constructor
 var Person=function(firstName, lastName, yearOfBirth, job){
   this.firstName=firstName;
   this.lastName=lastName;
@@ -20,6 +24,34 @@ John.calculateAge();
 Matt.calculateAge();
 George.calculateAge();
 
-console.log(John);
-console.log(Matt);
-console.log(George);
+/*
+We can use Javascript console to track the prototype chain
+
+Console Output:
+
+-John
+-Person {firstName: "John", lastName: "Lee", yearOfBirth: 1990, job: "Engineer", calculateAge: 28}
+calculateAge: 28
+firstName: "John"
+job: "Engineer"
+lastName: "Lee"
+yearOfBirth: 1990
+__proto__:
+calculateAge: ƒ ()
+city: "San Diego"
+constructor: ƒ (firstName, lastName, yearOfBirth, job)
+__proto__:
+constructor: ƒ Object()
+hasOwnProperty: ƒ hasOwnProperty()
+isPrototypeOf: ƒ isPrototypeOf()
+propertyIsEnumerable: ƒ propertyIsEnumerable()
+toLocaleString: ƒ toLocaleString()
+toString: ƒ toString()
+valueOf: ƒ valueOf()
+__defineGetter__: ƒ __defineGetter__()
+__defineSetter__: ƒ __defineSetter__()
+__lookupGetter__: ƒ __lookupGetter__()
+__lookupSetter__: ƒ __lookupSetter__()
+get __proto__: ƒ __proto__()
+set __proto__: ƒ __proto__()
+*/
