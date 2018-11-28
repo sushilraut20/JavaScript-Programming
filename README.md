@@ -10,3 +10,7 @@ GAME RULES:
 - The player can choose to 'Hold', which means that his ROUND score gets added to his GLBAL score. After that, it's the next player's turn
 - Add an input field to the HTML where players can set the winning score, so that they can change the predefined score of 100.
 - The first player to reach Winning points on GLOBAL score wins the game
+
+
+--------------------------------------------------------------------------------------------------------------
+scripts folder consists of short programs implementing important concepts in JavaScript eg. prototype, closures etc.
