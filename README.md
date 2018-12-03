@@ -13,4 +13,4 @@ GAME RULES:
 
 
 --------------------------------------------------------------------------------------------------------------
-scripts folder consists of short programs implementing important concepts in JavaScript eg. prototype, closures etc.
+scripts folder consists of short programs implementing important concepts in JavaScript eg. prototype, closures, call, apply, bind etc.
