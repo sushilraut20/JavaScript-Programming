@@ -130,13 +130,36 @@ function displayQuestion(){
 
   questionsArray[questionIndex].displayQuestion();
 
-  var userAnswer= prompt("Please enter your answer: ");
 
-  if (userAnswer!='exit') {
 
-    questionsArray[questionIndex].checkAnswer(parseInt(userAnswer),getScore);
-    displayQuestion();
+  if (questionsArray.length===0) {
+
+    return;
 
   }
+  else {
+
+    var userAnswer= prompt("Please enter your answer: ");
+
+    if (userAnswer!='exit') {
+
+      questionsArray[questionIndex].checkAnswer(parseInt(userAnswer),getScore);
+
+      questionsArray.splice(questionIndex,1);
+
+      if (questionsArray.length===0) {
+
+        return;
+
+      }
+      else {
+        displayQuestion();
+      }
+
+    }
+
+  }
+
+
 
 }
