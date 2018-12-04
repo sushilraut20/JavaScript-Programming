@@ -1,3 +1,4 @@
+
 /*
 Closure property:
 "The inner function can access the variables and properties of outer function even after the outer function is returned".
