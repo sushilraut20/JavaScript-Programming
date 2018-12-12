@@ -9,3 +9,6 @@ let age=year.map((element, index, array) => {
 })
 
 console.log(age);
+
+
+//Note: We can use forEach inplace of map. Both works exactly the same.
